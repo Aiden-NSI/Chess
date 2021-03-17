@@ -62,7 +62,7 @@ while running :
 
     # mettre a jour l'ecran
     pygame.display.flip()
-    screen.blit(policem.render("ChessNSI", True, WHITE), (65, 60))
+    
     # si le joueur ferme cette fenetre
     for event in pygame.event.get():
         #que l'evenement est fermeture de fenetre
