@@ -23,6 +23,7 @@ BLACK = (0, 0, 0)
 
 # importation des images
 background = pygame.image.load("res/menu.jpg").convert()
+logo= pygame.image.load("res/logo.png")
 
 #lancement de la sicmu
 music = sound.Music()
@@ -34,13 +35,13 @@ while running :
 
     # appliquer l'arrière plan
     screen.blit(background, (0, 0))
+    screen.blit(logo, (15,-140))
+
 
     # Boutons sur le Menu
-    screen.blit(policem.render("ChessNSI", True, WHITE), (65, 60))
-    pygame.draw.line(screen, (255, 255, 255), (60, 100), (235, 100), 4)
-    screen.blit(polices.render("Version 0.12 alpharoméo", True, WHITE), (230, 100,0,40))
+    screen.blit(polices.render("Version 0.13 alpharoméo", True, WHITE), (250, 110,0,40))
 
-    screen.blit(policem.render("SinglePlayer", True, WHITE), (300, 180, 240, 40))
+    screen.blit(policem.render("SinglePlayer", True, WHITE), (265, 210, 240, 40))
     screen.blit(policem.render("Preferences", True, WHITE), (0, 440, 210, 40))
     screen.blit(policem.render("About", True, WHITE), (680, 440, 110, 40))
 
@@ -48,8 +49,8 @@ while running :
     x, y = pygame.mouse.get_pos()
 
     #si souris sur texte devient noir
-    if (300, 180, 240, 40)[0] < x < sum((300, 180, 240, 40)[::2]) and (300, 180, 240, 40)[1] < y < sum((300, 180, 240, 40)[1::2]):
-        screen.blit(policem.render("SinglePlayer", True, BLACK), (300, 180, 240, 40)[:2])
+    if (265, 210, 240, 40)[0] < x < sum((265, 210, 240, 40)[::2]) and (265, 210, 240, 40)[1] < y < sum((265, 210, 240, 40)[1::2]):
+        screen.blit(policem.render("SinglePlayer", True, BLACK), (265, 210, 240, 40)[:2])
     if (0, 440, 210, 40)[0] < x < sum((0, 440, 210, 40)[::2]) and (0, 440, 210, 40)[1] < y < sum((0, 440, 210, 40)[1::2]):
         screen.blit(policem.render("Preferences", True, BLACK), (0, 440, 210, 40)[:2])
     if (680, 440, 110, 40)[0] < x < sum((680, 440, 110, 40)[::2]) and (680, 440, 110, 40)[1] < y < sum((680, 440, 110, 40)[1::2]):
@@ -61,7 +62,7 @@ while running :
 
     # mettre a jour l'ecran
     pygame.display.flip()
-
+    screen.blit(policem.render("ChessNSI", True, WHITE), (65, 60))
     # si le joueur ferme cette fenetre
     for event in pygame.event.get():
         #que l'evenement est fermeture de fenetre
@@ -70,3 +71,4 @@ while running :
             music.stop()
             pygame.quit()
             print("fermeture du jeu")
+
