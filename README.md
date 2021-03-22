@@ -5,3 +5,6 @@ Projet de terminal NSI
 
 
 17 Mars : Mise en Place d'une ROADMAP (organisation) + ajout d'un vrai logo dans le menu
+
+
+22 Mars: Consultation du site : https://pub.phyks.me/sdz/sdz/interface-graphique-pygame-pour-python.html
