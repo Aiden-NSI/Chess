@@ -36,6 +36,21 @@ def __init__(self):
     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1
     ]# échiquier pour les movements
+    
+def init(self):
+    """remets les pièces à leur positions de départ"""
+    """les pièces sont dans un tableau allant de 0 à 63"""
+
+    self.cases = [
+            Piece('TOUR','noir'),Piece('CAVALIER','noir'),Piece('FOU','noir'),Piece('DAME','noir'),Piece('ROI','noir'),Piece('FOU','noir'),Piece('CAVALIER','noir'),Piece('TOUR','noir'),
+            Piece('PION','noir'),Piece('PION','noir'),Piece('PION','noir'),Piece('PION','noir'),Piece('PION','noir'),Piece('PION','noir'),Piece('PION','noir'),Piece('PION','noir'),
+            Piece(),Piece(),Piece(),Piece(),Piece(),Piece(),Piece(),Piece(),
+            Piece(),Piece(),Piece(),Piece(),Piece(),Piece(),Piece(),Piece(),
+            Piece(),Piece(),Piece(),Piece(),Piece(),Piece(),Piece(),Piece(),
+            Piece(),Piece(),Piece(),Piece(),Piece(),Piece(),Piece(),Piece(),
+            Piece('PION','blanc'),Piece('PION','blanc'),Piece('PION','blanc'),Piece('PION','blanc'),Piece('PION','blanc'),Piece('PION','blanc'),Piece('PION','blanc'),Piece('PION','blanc'),
+            Piece('TOUR','blanc'),Piece('CAVALIER','blanc'),Piece('FOU','blanc'),Piece('DAME','blanc'),Piece('ROI','blanc'),Piece('FOU','blanc'),Piece('CAVALIER','blanc'),Piece('TOUR','blanc')
+            ]
 
 def gen_moves_list(self,color='',dontCallIsAttacked=False):
 
