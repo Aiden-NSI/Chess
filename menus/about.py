@@ -36,7 +36,7 @@ def _filled_rounded_rect(surf, color, rect, r):
 
 
 class ABOUT:
-    HEAD = large.render("About PyChess", True, WHITE)
+    HEAD = large.render("About NSI-Chess", True, WHITE)
 
     with open(os.path.join("res", "about.txt"), "r") as f:
         TEXT = [vsmall.render(i, True, WHITE) for i in f.read().splitlines()]
