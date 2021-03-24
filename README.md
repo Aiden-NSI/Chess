@@ -8,3 +8,6 @@ Projet de terminal NSI
 
 
 22 Mars: Consultation du site : https://pub.phyks.me/sdz/sdz/interface-graphique-pygame-pour-python.html
+
+
+24 Mars: Création du menu about 
