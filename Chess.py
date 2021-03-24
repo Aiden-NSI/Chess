@@ -3,6 +3,7 @@
 import pygame
 import sys
 import sound
+import menus
 
 
 
@@ -19,7 +20,7 @@ polices = pygame.font.SysFont("monospace", 20)
 
 #Definition des couleurs
 WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
+BLACK = (255, 255, 0)
 
 # importation des images
 background = pygame.image.load("res/menu.jpg").convert()
@@ -56,19 +57,25 @@ while running :
     if (680, 440, 110, 40)[0] < x < sum((680, 440, 110, 40)[::2]) and (680, 440, 110, 40)[1] < y < sum((680, 440, 110, 40)[1::2]):
         screen.blit(policem.render("About", True, BLACK), (680, 440, 110, 40)[:2])
     if (230, 100, 0, 40)[0] < x < sum((230, 100, 0, 40)[::2]) and (230, 100, 0, 40)[1] < y < sum((230, 100 , 0, 40)[1::2]):
-        screen.blit(polices.render("Version 0.12 alpharoméo", True, BLACK), (230, 100, 0, 40)[:2])
+        screen.blit(polices.render("Version 0.13 alpharoméo", True, BLACK), (230, 100, 0, 40)[:2])
 
-    #Lancement du jeu quand on appuies sur SinglePlayer
+
 
     # mettre a jour l'ecran
     pygame.display.flip()
-    
+
     # si le joueur ferme cette fenetre
     for event in pygame.event.get():
         #que l'evenement est fermeture de fenetre
         if event.type == pygame.QUIT:
             running = False
-            music.stop()
-            pygame.quit()
-            print("fermeture du jeu")
 
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            x, y = event.pos
+            if (680, 440, 110, 40)[0] < x < sum((680, 440, 110, 40)[::2]) and (680, 440, 110, 40)[1] < y < sum((680, 440, 110, 40)[1::2]):
+                run = menus.aboutmenu(screen)
+
+
+music.stop()
+pygame.quit()
+print("fermeture du jeu")
