@@ -1,5 +1,19 @@
 MY NSI-Chess 
 
-Graphiste:Valentin 
-IG: Steven
+NSI-Chess is a Group project in Terminal class option NSI, 
+It consists in creating a project of any kind. 
+So we decided to create a chess game in python
+With my team :
+
+Graphiste: Valentin 
+Interface Graphique: Steven
 Coding: Damien et Charles
+
+
+                                                       
+
+
+PS:Have a easterEggs in menu
+
+
+                                             THANKS FOR PLAYING
