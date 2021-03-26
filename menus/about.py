@@ -1,21 +1,16 @@
-'''
-This file is a part of My-PyChess application.
-In this file, we manage the about menu which is called when user clicks
-about button on main menu.
-'''
-
+#importation des modules nécessaires
 import pygame
 import pygame.gfxdraw
 import os.path
 pygame.init()  # essential for pygame
 pygame.font.init()  # text
 
-
+#créations des variables nécessaires
 large = pygame.font.SysFont("monospace", 50)
 vsmall = pygame.font.SysFont("monospace", 17)
 WHITE = (255, 255, 255)
 
-# This function needs to be called when user wants to draw a rounded rect
+# Cette fonction crée des rectangle avec des angles arrondis
 def rounded_rect(surf, color, rect, radius=10, border=2, incolor=(0, 0, 0)):
     if min(rect[2], rect[3]) > 2 * (radius + border):
         _filled_rounded_rect(surf, color, rect, radius)
@@ -43,20 +38,20 @@ class ABOUT:
 
 BACK = pygame.image.load(os.path.join("res","back.png"))
 
-# This shows the screen
+# c'est l'écran
 def showScreen(screen):
     screen.fill((0, 0, 0))
-    rounded_rect(screen, (255, 255, 255), (70, 10, 360, 60), 16, 4)
-    rounded_rect(screen, (255, 255, 255), (10, 80, 480, 410), 10, 4)
+    rounded_rect(screen, (255, 255, 255), (150, 10, 500, 60), 16, 4)
+    rounded_rect(screen, (255, 255, 255), (50, 80, 700, 380), 10, 4)
 
-    screen.blit(ABOUT.HEAD, (74, 12))
+    screen.blit(ABOUT.HEAD, (180, 12))
     for cnt, i in enumerate(ABOUT.TEXT):
-        screen.blit(i, (20, 90 + cnt*18))
+        screen.blit(i, (70, 90 + cnt*18))
 
-    screen.blit(BACK, (460, 0))
+    screen.blit(BACK, (750, 0))
     pygame.display.update()
 
-# This is the main function, called from main menu
+# Fonction principale appellée quand on appuie sur le mennu principal
 def main(screen):
     showScreen(screen)
     clock = pygame.time.Clock()
@@ -68,5 +63,5 @@ def main(screen):
 
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 x, y = event.pos
-                if 460 < x < 500 and 0 < y < 50:
+                if 750 < x < 800 and 0 < y < 50:
                     return 1
