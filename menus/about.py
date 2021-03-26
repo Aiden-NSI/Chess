@@ -6,6 +6,7 @@ pygame.init()  # essential for pygame
 pygame.font.init()  # text
 
 #créations des variables nécessaires
+BACK = pygame.image.load(os.path.join("res","back.png"))
 large = pygame.font.SysFont("monospace", 50)
 vsmall = pygame.font.SysFont("monospace", 17)
 WHITE = (255, 255, 255)
@@ -35,8 +36,6 @@ class ABOUT:
 
     with open(os.path.join("res", "about.txt"), "r") as f:
         TEXT = [vsmall.render(i, True, WHITE) for i in f.read().splitlines()]
-
-BACK = pygame.image.load(os.path.join("res","back.png"))
 
 # c'est l'écran
 def showScreen(screen):
