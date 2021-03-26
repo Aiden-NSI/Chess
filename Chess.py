@@ -40,7 +40,7 @@ while running :
 
 
     # Boutons sur le Menu
-    screen.blit(polices.render("Version 0.13 alpharoméo", True, WHITE), (250, 110,0,40))
+    screen.blit(polices.render("Version 0.14 alpharoméo", True, WHITE), (250, 110,0,40))
 
     screen.blit(policem.render("SinglePlayer", True, WHITE), (265, 210, 240, 40))
     screen.blit(policem.render("Preferences", True, WHITE), (0, 440, 210, 40))
@@ -57,7 +57,7 @@ while running :
     if (680, 440, 110, 40)[0] < x < sum((680, 440, 110, 40)[::2]) and (680, 440, 110, 40)[1] < y < sum((680, 440, 110, 40)[1::2]):
         screen.blit(policem.render("About", True, BLACK), (680, 440, 110, 40)[:2])
     if (230, 100, 0, 40)[0] < x < sum((230, 100, 0, 40)[::2]) and (230, 100, 0, 40)[1] < y < sum((230, 100 , 0, 40)[1::2]):
-        screen.blit(polices.render("Version 0.13 alpharoméo", True, BLACK), (230, 100, 0, 40)[:2])
+        screen.blit(polices.render("Version 0.14 alpharoméo", True, BLACK), (230, 100, 0, 40)[:2])
 
 
 
