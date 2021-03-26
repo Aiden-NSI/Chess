@@ -74,7 +74,8 @@ while running :
             x, y = event.pos
             if (680, 440, 110, 40)[0] < x < sum((680, 440, 110, 40)[::2]) and (680, 440, 110, 40)[1] < y < sum((680, 440, 110, 40)[1::2]):
                 run = menus.aboutmenu(screen)
-
+            elif (0, 440, 210, 40)[0] < x < sum((0, 440, 210, 40)[::2]) and (0, 440, 210, 40)[1] < y < sum((0, 440, 210, 40)[1::2]):
+                run = menus.prefmenu(screen)
 
 music.stop()
 pygame.quit()
