@@ -11,3 +11,5 @@ Projet de terminal NSI
 
 
 24 Mars: Création du menu about 
+
+26 Mars: About.py terminer + commencement de Préférences.py
