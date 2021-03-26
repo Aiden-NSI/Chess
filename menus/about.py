@@ -6,6 +6,7 @@ pygame.init()  # essential for pygame
 pygame.font.init()  # text
 
 #créations des variables nécessaires
+background = pygame.image.load(os.path.join("res","menu.jpg"))
 BACK = pygame.image.load(os.path.join("res","back.png"))
 large = pygame.font.SysFont("monospace", 50)
 vsmall = pygame.font.SysFont("monospace", 17)
@@ -39,7 +40,7 @@ class ABOUT:
 
 # c'est l'écran
 def showScreen(screen):
-    screen.fill((0, 0, 0))
+    screen.blit(background, (0, 0))
     rounded_rect(screen, (255, 255, 255), (150, 10, 500, 60), 16, 4)
     rounded_rect(screen, (255, 255, 255), (50, 80, 700, 380), 10, 4)
 
