@@ -1,4 +1,4 @@
-﻿#importation des modules nécessaires
+#importation des modules nécessaires
 import pygame
 import pygame.gfxdraw
 import os.path
@@ -20,55 +20,37 @@ def rounded_rect(surf, color, rect, radius=10, border=2, incolor=(0, 0, 0)):
                 rect[2] - 2*border, rect[3] - 2*border)
         _filled_rounded_rect(surf, incolor, rect, radius)
 
+def _filled_rounded_rect(surf, color, rect, r):
+    for x, y in [(rect[0] + r, rect[1] + r),
+                 (rect[0] + rect[2] - r - 1, rect[1] + r),
+                 (rect[0] + r, rect[1] + rect[3] - r - 1),
+                 (rect[0] + rect[2] - r - 1, rect[1] + rect[3] - r - 1)]:
+        pygame.gfxdraw.aacircle(surf, x, y, r, color)
+        pygame.gfxdraw.filled_circle(surf, x, y, r, color)
 
-class PREF:
-    HEAD = large.render("Preferences", True, WHITE)
+    pygame.draw.rect(surf, color, (rect[0] + r, rect[1], rect[2] - 2*r, rect[3]))
+    pygame.draw.rect(surf, color, (rect[0], rect[1] + r, rect[2], rect[3] - 2*r))
 
-    SOUNDS = large.render("Sounds", True, WHITE)
-    FLIP = large.render("Flip screen", True, WHITE)
-    CLOCK = large.render("Show Clock", True, WHITE)
-    SLIDESHOW = large.render("Slideshow", True, WHITE)
-    MOVE = large.render("Moves", True, WHITE)
-    UNDO = large.render("Allow undo", True, WHITE)
 
-    COLON = large.render(":", True, WHITE)
+def showScreen(screen):
+    screen.blit(background, (0, 0))
+    rounded_rect(screen, (255, 255, 255), (150, 10, 500, 60), 16, 4)
+    rounded_rect(screen, (255, 255, 255), (50, 80, 700, 380), 10, 4)
 
-    TRUE = large.render("True", True, WHITE)
-    FALSE = large.render("False", True, WHITE)
+    screen.blit(BACK, (750, 0))
+    pygame.display.update()
 
-    SOUNDS_H = (
-        large.render("Play different sounds", True, WHITE),
-        large.render("and music", True, WHITE),
-    )
-    FLIP_H = (
-        large.render("This flips the screen", True, WHITE),
-        large.render("after each move", True, WHITE),
-    )
-    CLOCK_H = (
-        large.render("Show a clock in chess", True, WHITE),
-        large.render("when timer is disabled", True, WHITE),
-    )
-    SLIDESHOW_H = (
-        large.render("This shows a slide of", True, WHITE),
-        large.render("backgrounds on screen", True, WHITE),
-    )
-    MOVE_H = (
-        large.render("This shows all the legal", True, WHITE),
-        large.render("moves of a selected piece", True, WHITE),
-    )
-    UNDO_H = (
-        large.render("This allowes undo if", True, WHITE),
-        large.render("set to be true", True, WHITE),
-    )
 
-    BSAVE = large.render("Save", True, WHITE)
-    TIP = large.render("TIP: Hover the mouse over the feature", True, WHITE)
-    TIP2 = large.render("name to know more about it.", True, WHITE)
+def main(screen):
+    showScreen(screen)
+    clock = pygame.time.Clock()
+    while True:
+        clock.tick(24)
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                return 0
 
-    PROMPT = (
-        large.render("Are you sure you want to leave?", True, WHITE),
-        large.render("Any changes will not be saved.", True, WHITE),
-    )
-
-    YES = vsmall.render("YES", True, WHITE)
-    NO = vsmall.render("NO", True, WHITE)
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                x, y = event.pos
+                if 750 < x < 800 and 0 < y < 50:
+                    return 1
