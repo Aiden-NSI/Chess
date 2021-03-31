@@ -13,3 +13,6 @@ Projet de terminal NSI
 24 Mars: Création du menu about 
 
 26 Mars: About.py terminer + commencement de Préférences.py
+
+31 Mars: Création d'une interface test de l'échiquier avec ses pions
+
