@@ -16,3 +16,5 @@ Projet de terminal NSI
 
 31 Mars: Création d'une interface test de l'échiquier avec ses pions
 
+3 Avril: Création du plateau définitif 800px
+
