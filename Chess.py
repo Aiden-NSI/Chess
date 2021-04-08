@@ -12,7 +12,9 @@ pygame.font.init()  # text
 
 
 #-----VARIABLES------
-pygame.display.set_caption('ChessNSI')
+pygame.display.set_caption('NSIChess')
+icon = pygame.image.load('res/chess_icon.jpg')
+pygame.display.set_icon(icon)
 screen = pygame.display.set_mode((1280, 720))
 
 
@@ -107,4 +109,3 @@ while running:
 music.stop()
 pygame.quit()
 print("fermeture du jeu")
-
