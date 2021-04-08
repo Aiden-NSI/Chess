@@ -6,7 +6,8 @@ pygame.init()  # essential for pygame
 pygame.font.init()  # text
 
 #créations des variables nécessaires
-background = pygame.image.load(os.path.join("res","menu.jpg"))
+background = pygame.image.load('res/fondfull.jpg')
+background = pygame.transform.scale(background, (1280, 720))
 BACK = pygame.image.load(os.path.join("res","back.png"))
 large = pygame.font.SysFont("monospace", 38)
 vsmall = pygame.font.SysFont("monospace", 17)
