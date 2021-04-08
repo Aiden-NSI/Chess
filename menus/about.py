@@ -6,14 +6,16 @@ pygame.init()  # essential for pygame
 pygame.font.init()  # text
 
 #créations des variables nécessaires
-background = pygame.image.load(os.path.join("res","menu.jpg"))
-BACK = pygame.image.load(os.path.join("res","back.png"))
-large = pygame.font.SysFont("monospace", 50)
-vsmall = pygame.font.SysFont("monospace", 17)
+background = pygame.image.load("res/fondfull.jpg")
+background = pygame.transform.scale(background, (1280, 720))
+BACK = pygame.image.load(os.path.join("res", "back.png"))
+large = pygame.font.Font("res/Polices/MilkyNice-Clean.ttf", 50)
+vsmall = pygame.font.Font("res/Polices/MilkyNice-Clean.ttf", 17)
 WHITE = (255, 255, 255)
+VIOLET = (51, 51, 102)
 
 # Cette fonction crée des rectangle avec des angles arrondis
-def rounded_rect(surf, color, rect, radius=10, border=2, incolor=(0, 0, 0)):
+def rounded_rect(surf, color, rect, radius=10, border=2, incolor=(VIOLET)):
     if min(rect[2], rect[3]) > 2 * (radius + border):
         _filled_rounded_rect(surf, color, rect, radius)
         rect = (rect[0] + border, rect[1] + border,
