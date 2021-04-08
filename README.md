@@ -18,3 +18,6 @@ Projet de terminal NSI
 
 3 Avril: Création du plateau définitif 800px
 
+07 Avril: Affichage en 720 par 1280 / Création de la class game / création de la classe tour
+/ interaction bouton pour lancer le jeu
+
