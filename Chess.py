@@ -83,9 +83,14 @@ while running:
             # que l'évenement est appuyer sur un bouton
 
 
-
+        #boutons du menu
         for event in pygame.event.get():
-            if event.type == pygame.MOUSEBUTTONDOWN:
+            
+            # que l'evenement est fermeture de fenetre
+            if event.type == pygame.QUIT:
+                running = False
+            # que l'evenement est menu about ou préferences ou play
+            elif event.type == pygame.MOUSEBUTTONDOWN:
                 x, y = event.pos
                 if (1160, 440, 110, 40)[0] < x < sum((1160, 680, 110, 40)[::2]) and (1160, 680, 110, 40)[1] < y < sum(
                         (1160, 680, 110, 40)[1::2]):
@@ -116,4 +121,5 @@ while running:
 music.stop()
 pygame.quit()
 print("fermeture du jeu")
+
 
