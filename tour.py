@@ -9,5 +9,5 @@ class Tour(pygame.sprite.Sprite):
         self.image = pygame.image.load('res/rook.png')
         self.image = pygame.transform.scale(self.image, (80, 80))
         self.rect =self.image.get_rect()
-        self.rect.x = 265
-        self.rect.y = 15
+        self.rect.x = 318
+        self.rect.y = 40
