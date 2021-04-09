@@ -7,5 +7,5 @@ class Plateau(pygame.sprite.Sprite):
         super().__init__()
         self.image = pygame.image.load('res/plateau_light.jpg')
         self.rect =self.image.get_rect()
-        self.rect.x = 250
-        self.rect.y = 0
+        self.rect.x = 320
+        self.rect.y = 40
