@@ -78,10 +78,28 @@ while running:
             screen.blit(polices.render("Préférences", True, WHITE), (20, 680, 210, 40)[:2])
         if (1160, 680, 110, 40)[0] < x < sum((1160, 680, 110, 40)[::2]) and (1160, 680, 110, 40)[1] < y < sum((1160, 680, 110, 40)[1::2]):
             screen.blit(polices.render("About", True, WHITE), (1160, 680, 110, 40)[:2])
-        if (230, 100, 0, 40)[0] < x < sum((230, 100, 0, 40)[::2]) and (230, 100, 0, 40)[1] < y < sum((230, 100 , 0, 40)[1::2]):
-            screen.blit(policexs.render("Version Alpharoméo", True, BLACK), (230, 100, 0, 40)[:2])
+        if (600, 700, 0, 40)[0] < x < sum((600, 700, 0, 40)[::2]) and (600, 700, 0, 40)[1] < y < sum((600, 700, 0, 40)[1::2]):
+            screen.blit(policexs.render("Version Alpharoméo", True, WHITE), (600, 700, 0, 40)[:2])
+            # que l'évenement est appuyer sur un bouton
 
 
+
+        for event in pygame.event.get():
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                x, y = event.pos
+                if (1160, 440, 110, 40)[0] < x < sum((1160, 680, 110, 40)[::2]) and (1160, 680, 110, 40)[1] < y < sum(
+                        (1160, 680, 110, 40)[1::2]):
+                    run = menus.aboutmenu(screen)
+
+                elif (20, 680, 210, 40)[0] < x < sum((20, 680, 210, 40)[::2]) and (20, 680, 210, 40)[1] < y < sum(
+                        (20, 680, 210, 40)[1::2]):
+                    run = menus.prefmenu(screen)
+                # savoir si la souris est en collision avec notre bouton de démarage
+
+                elif (520, 310, 240, 40)[0] < x < sum((520, 310, 240, 40)[::2]) and (520, 310, 240, 40)[1] < y < sum(
+                        (520, 310, 240, 40)[1::2]):
+                    # mode le jeu en mode lancé
+                    game.is_playing = True
 
     # mettre a jour l'ecran
     pygame.display.flip()
@@ -92,21 +110,10 @@ while running:
         #que l'evenement est fermeture de fenetre
         if event.type == pygame.QUIT:
             running = False
-         #que l'évenement est appuyer sur un bouton
-        elif event.type == pygame.MOUSEBUTTONDOWN:
-            x, y = event.pos
-            if (1160, 440, 110, 40)[0] < x < sum((1160, 680, 110, 40)[::2]) and (1160, 680, 110, 40)[1] < y < sum((1160, 680, 110, 40)[1::2]):
-                run = menus.aboutmenu(screen)
 
-            elif (20, 680, 210, 40)[0] < x < sum((20, 680, 210, 40)[::2]) and (20, 680, 210, 40)[1] < y < sum((20, 680, 210, 40)[1::2]):
-                run = menus.prefmenu(screen)
-            #savoir si la souris est en collision avec notre bouton de démarage
-
-            elif (520, 310, 240, 40)[0] < x < sum((520, 310, 240, 40)[::2]) and (520, 310, 240, 40)[1] < y < sum((520, 310, 240, 40)[1::2]):
-                #mode le jeu en mode lancé
-                game.is_playing = True
 
 
 music.stop()
 pygame.quit()
 print("fermeture du jeu")
+
