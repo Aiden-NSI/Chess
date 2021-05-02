@@ -1,9 +1,9 @@
 import math
 
-pieceLogic = {}
-whiteInCheck = False
-blackInCheck = False
-EMPTY = 0
+pieceLogique = {}
+BlancEnEchec = False
+NoirEnEchec = False
+VIDE = 0
 
 board = [
 	[0, 0, 0, 0, 0, 0, 0, 0],
@@ -16,10 +16,10 @@ board = [
 	[0, 0, 0, 0, 0, 0, 0, 0],
 ]
 
-def isFree(pos):
-	row, col = pos[0], pos[1]
-	if ((row < 0) or (col < 0) or (row > len(board)-1) or (col > len(board)-1)): return
-	return board[row][col] == EMPTY
+def Libre(pos):
+	lig, col = pos[0], pos[1]
+	if ((lig < 0) or (col < 0) or (lig > len(board)-1) or (col > len(board)-1)): return
+	return board[lig][col] == VIDE
 def checkLogic(piece, newpos):
 	return True
 def colLogic(piece, newpos):
@@ -52,21 +52,21 @@ def colLogic(piece, newpos):
 
 def rookLogic(piece, newpos):
 	return ((piece.pos[0] == newpos[0]) or (piece.pos[1] == newpos[1]))
-pieceLogic['Rook']=rookLogic
+pieceLogique['Rook']=rookLogic
 
 def knightLogic(piece, newpos):
 	diffx = abs(piece.pos[0]-newpos[0])
 	diffy = abs(piece.pos[1]-newpos[1])
 	return (diffx <= 2 and diffy <= 2 and diffx != 0 and diffy != 0 and diffx != diffy)
-pieceLogic['Knight']=knightLogic
+pieceLogique['Knight']=knightLogic
 
 def bishopLogic(piece, newpos):
 	return (abs(piece.pos[1]-newpos[1]) == abs(piece.pos[0]-newpos[0]))
-pieceLogic['Bishop']=bishopLogic
+pieceLogique['Bishop']=bishopLogic
 
 def queenLogic(piece, newpos):
 	return (rookLogic(piece, newpos) or bishopLogic(piece, newpos))
-pieceLogic['Queen']=queenLogic
+pieceLogique['Queen']=queenLogic
 
 def kingLogic(piece, newpos):
 	if (piece.pos[1]-newpos[1] == 0 and (abs(piece.pos[0]-newpos[0])>1 and abs(piece.pos[0]-newpos[0]<4)) and piece.hasMoved == False):
@@ -82,7 +82,7 @@ def kingLogic(piece, newpos):
 			return True
 	else:
 		return (queenLogic(piece, newpos) and (abs(piece.pos[0]-newpos[0]) <= 1 and abs(piece.pos[1]-newpos[1]) <= 1))
-pieceLogic['King']=kingLogic
+pieceLogique['King']=kingLogic
 
 def pawnLogic(piece, newpos):
 	squaresallowed = piece.hasMoved and 1 or 2 #piece.hasmoved and 1 or 2
@@ -93,13 +93,13 @@ def pawnLogic(piece, newpos):
 	elif board[newpos[0]][newpos[1]] != 0 and movedh == 0:
 		return False
 	return ((piece.pos[0] == newpos[0]) and (movedv <= squaresallowed) and (movedv > 0))
-pieceLogic['Pawn']=pawnLogic
+pieceLogique['Pawn']=pawnLogic
 
 #Pull from table of logics
 def pieceCanMove(piece, newpos, realcall):
 	global rc
 	rc = realcall
-	for key in pieceLogic:
+	for key in pieceLogique:
 		if piece.name == key:
-			return (pieceLogic[key](piece, newpos) and colLogic(piece, newpos) and checkLogic(piece, newpos))
+			return (pieceLogique[key](piece, newpos) and colLogic(piece, newpos) and checkLogic(piece, newpos))
 	return True
