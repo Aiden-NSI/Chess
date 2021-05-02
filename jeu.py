@@ -1,7 +1,7 @@
 # ------------- INITIALISATION-------------------
 import pygame, sys, os, math
 sys.dont_write_bytecode = True
-from piecelogic import *
+from piecelogique import *
 from imagedefs import *
 
 pygame.init()
@@ -40,7 +40,7 @@ class Piece():
 			moves[1].append((self.name, (self.pos, pos)))
 		else: #vice-versa
 			moves[0].append((self.name, (self.pos, pos)))
-		board[self.pos[0]][self.pos[1]] = EMPTY
+		board[self.pos[0]][self.pos[1]] = VIDE
 		self.pos = pos
 		board[self.pos[0]][self.pos[1]] = self
 		self.hasMoved = True
@@ -109,7 +109,7 @@ def drawPieces():
 						screen.blit(attackimg, pixelpos((i, i2)))
 				else:
 					pass
-			if piece != EMPTY:
+			if piece != VIDE:
 				screen.blit(piece.image, (i*45, i2*45))
 
 def getAttacks():
