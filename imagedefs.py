@@ -1,5 +1,5 @@
 import pygame
-#load images and stuff
+#charge les images et autres.
 highlightimg = pygame.image.load("res/pieces/highlight.png")
 hhoverimg = pygame.image.load("res/pieces/hhover.png")
 attackimg = pygame.image.load("res/pieces/attack.png")
