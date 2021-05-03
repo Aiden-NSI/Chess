@@ -16,7 +16,7 @@ board = [
 	[0, 0, 0, 0, 0, 0, 0, 0],
 ]
 
-def Libre(pos):
+def isFree(pos):
 	lig, col = pos[0], pos[1]
 	if ((lig < 0) or (col < 0) or (lig > len(board)-1) or (col > len(board)-1)): return
 	return board[lig][col] == VIDE
