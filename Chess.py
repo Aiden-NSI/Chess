@@ -54,8 +54,6 @@ while running:
 
     #vérifier si notre jeu a commencé ou non
     if game.is_playing:
-        #déclancher les instruction de la partie
-        game.update(screen)
         music.stop()
 
     #vérifier si notre jeu n'a pas commencé
