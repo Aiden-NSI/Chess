@@ -21,3 +21,4 @@ Projet de terminal NSI
 07 Avril: Affichage en 720 par 1280 / Création de la class game / création de la classe tour
 / interaction bouton pour lancer le jeu
 
+29 Avril:Commencement du vrai jeu d'échec
