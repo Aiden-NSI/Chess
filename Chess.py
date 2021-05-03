@@ -57,6 +57,7 @@ while running:
     if game.is_playing:
         music.stop()
         subprocess.call("python jeu.py")
+        running = False
 
     #vérifier si notre jeu n'a pas commencé
     else:
