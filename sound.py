@@ -13,7 +13,7 @@ except (ImportError, RuntimeError):
 
 if SUCCESS:
 
-    background = pygame.mixer.Sound(os.path.join("res", "sounds", "background.ogg"))
+    background = pygame.mixer.Sound(os.path.join("res", "sounds", "background1.ogg"))
 
 class Music:
     def __init__(self):
