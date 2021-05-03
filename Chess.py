@@ -4,6 +4,7 @@ import pygame
 import sound
 import menus
 from game import Game
+import subprocess
 
 
 pygame.init()  # essential for pygame
@@ -55,6 +56,7 @@ while running:
     #vérifier si notre jeu a commencé ou non
     if game.is_playing:
         music.stop()
+        subprocess.call("python jeu.py")
 
     #vérifier si notre jeu n'a pas commencé
     else:
