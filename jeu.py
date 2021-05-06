@@ -34,7 +34,7 @@ width = tilew * 8
 
 pygame.display.set_icon(icon)
 pygame.display.set_caption("NSIChess")
-screen = pygame.display.set_mode((1280, 720))
+screen = pygame.display.set_mode((360, 400))
 
 selected = False
 pieces = []
