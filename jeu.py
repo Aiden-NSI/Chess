@@ -73,7 +73,6 @@ font = pygame.font.SysFont("monospace", 20)
 def updateText():
 	global turnindic, piecesleft
 	turnindic = font.render("Turn: "+("white" if playerIsWhite == True else "black"), True, (139, 125, 107), (0, 0, 0, 0))
-	piecesleft = font.render("Pieces: "+str(len(pieces)), True, (139, 125, 107), (0, 0, 0, 0))
 updateText()
 
 def contains(pos):
@@ -135,7 +134,6 @@ while True:
 	drawPieces()
 
 	screen.blit(turnindic, (0, height+10))
-	screen.blit(piecesleft, (width-140, height+10))
 
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
