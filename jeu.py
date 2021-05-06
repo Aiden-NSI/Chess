@@ -71,6 +71,7 @@ class Piece():
 		global selected
 		selected = self.pos
 
+#mise en place des pions sur l'echequier
 for i in range(0, 8):
 	Piece('Pawn', 'W', (i, 6))
 	Piece('Pawn', 'B', (i, 1))
