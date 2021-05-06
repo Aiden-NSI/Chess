@@ -5,12 +5,10 @@ It consists in creating a project of any kind.
 So we decided to create a chess game in python
 With my team :
 
-Graphiste: Valentin 
-Interface Graphique: Steven
-Coding: Damien et Charles
-
-
-                                                       
+Valentin 
+Steven
+Damien  
+Charles                                                  
 
 
 PS:Have a easterEggs in menu
