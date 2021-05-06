@@ -20,8 +20,7 @@ def isFree(pos):
 	lig, col = pos[0], pos[1]
 	if ((lig < 0) or (col < 0) or (lig > len(board)-1) or (col > len(board)-1)): return
 	return board[lig][col] == VIDE
-def checkLogic(piece, newpos):
-	return True
+
 def colLogic(piece, newpos):
 	squareamountx = abs(piece.pos[0]-newpos[0])
 	squareamounty = abs(piece.pos[1]-newpos[1])
@@ -101,5 +100,5 @@ def pieceCanMove(piece, newpos, realcall):
 	rc = realcall
 	for key in pieceLogique:
 		if piece.name == key:
-			return (pieceLogique[key](piece, newpos) and colLogic(piece, newpos) and checkLogic(piece, newpos))
+			return (pieceLogique[key](piece, newpos) and colLogic(piece, newpos))
 	return True
