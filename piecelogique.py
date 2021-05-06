@@ -69,7 +69,7 @@ pieceLogique['Queen']=queenLogic
 
 def kingLogic(piece, newpos):
 	if (piece.pos[1]-newpos[1] == 0 and (abs(piece.pos[0]-newpos[0])>1 and abs(piece.pos[0]-newpos[0]<4)) and piece.hasMoved == False):
-		xdir = True if piece.pos[0]-newpos[0] > 0  else False #xdir is True if piece is moving to the left, False if it moves to the right
+		xdir = True if piece.pos[0]-newpos[0] > 0  else False #xdir vaut True si la pièce se déplace vers la gauche, False si elle se déplace vers la droite
 		castlerook = board[0][piece.pos[1]] if xdir == True else board[7][piece.pos[1]]
 		if xdir == True and castlerook != 0 and (abs(piece.pos[0]-newpos[0]) == 2 and castlerook.hasMoved == False):
 			if rc:
@@ -84,8 +84,8 @@ def kingLogic(piece, newpos):
 pieceLogique['King']=kingLogic
 
 def pawnLogic(piece, newpos):
-	squaresallowed = piece.hasMoved and 1 or 2 #piece.hasmoved and 1 or 2
-	movedh = (piece.pos[0] - newpos[0]) if piece.color == 'W' else (newpos[0] - piece.pos[0]) #Can't use abs like we would otherwise because pawns can't move backwards
+	squaresallowed = piece.hasMoved and 1 or 2 #piece.hasmoved et 1 ou 2
+	movedh = (piece.pos[0] - newpos[0]) if piece.color == 'W' else (newpos[0] - piece.pos[0]) #Je ne peux pas utiliser les abdos comme nous le ferions autrement parce que les pions ne peuvent pas reculer
 	movedv = (piece.pos[1] - newpos[1]) if piece.color == 'W' else (newpos[1] - piece.pos[1])
 	if board[newpos[0]][newpos[1]] != 0 and (bishopLogic(piece, newpos) and (abs(movedh) == 1 and movedv == 1)):
 		return True
