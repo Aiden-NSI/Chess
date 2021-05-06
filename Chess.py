@@ -64,7 +64,7 @@ while running:
         #ajouter l'écran de bienvenue
         screen.blit(logo, (270, -100))
         # Boutons sur le Menu
-        screen.blit(policexs.render("Version 0.8 grenadine", True, VIOLET), (600, 700, 0, 40))
+        screen.blit(policexs.render("Version 8.6 ma billule", True, VIOLET), (600, 700, 0, 40))
         screen.blit(policem.render("SinglePlayer", True, WHITE), (520, 310, 240, 40))
         screen.blit(polices.render("Preferences", True, VIOLET), (20, 680, 210, 40))
         screen.blit(polices.render("About", True, VIOLET), (1160, 680, 110, 40))
