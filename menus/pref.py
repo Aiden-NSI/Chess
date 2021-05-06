@@ -9,12 +9,13 @@ pygame.font.init()  # text
 background = pygame.image.load('res/fondfull.jpg')
 background = pygame.transform.scale(background, (1280, 720))
 BACK = pygame.image.load(os.path.join("res","back.png"))
-large = pygame.font.SysFont("monospace", 38)
-vsmall = pygame.font.SysFont("monospace", 17)
+large = pygame.font.Font("res/Polices/MilkyNice-Clean.ttf", 50)
+vsmall = pygame.font.Font("res/Polices/MilkyNice-Clean.ttf", 17)
 WHITE = (255, 255, 255)
+VIOLET = (51, 51, 102)
 
 # Cette fonction crée des rectangle avec des angles arrondis
-def rounded_rect(surf, color, rect, radius=10, border=2, incolor=(0, 0, 0)):
+def rounded_rect(surf, color, rect, radius=10, border=2, incolor=(VIOLET)):
     if min(rect[2], rect[3]) > 2 * (radius + border):
         _filled_rounded_rect(surf, color, rect, radius)
         rect = (rect[0] + border, rect[1] + border,
@@ -36,10 +37,10 @@ def _filled_rounded_rect(surf, color, rect, r):
 def showScreen(screen):
     screen.blit(background, (0, 0))
     rounded_rect(screen, (255, 255, 255), (150, 10, 500, 60), 16, 4)
-    rounded_rect(screen, (255, 255, 255), (50, 80, 700, 380), 10, 4)
+    rounded_rect(screen, (255, 255, 255), (50, 80, 1150, 600), 10, 4)
 
     screen.blit(large.render("Preferences", True, WHITE), (270, 18))
-    screen.blit(BACK, (750, 0))
+    screen.blit(BACK, (1200, 0))
     pygame.display.update()
 
 
@@ -54,5 +55,5 @@ def main(screen):
 
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 x, y = event.pos
-                if 750 < x < 800 and 0 < y < 50:
+                if 1200 < x < 1250 and 0 < y < 50:
                     return 1
