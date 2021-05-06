@@ -44,7 +44,7 @@ class ABOUT:
 def showScreen(screen):
     screen.blit(background, (0, 0))
     rounded_rect(screen, (255, 255, 255), (150, 10, 500, 60), 16, 4)
-    rounded_rect(screen, (255, 255, 255), (50, 80, 700, 380), 10, 4)
+    rounded_rect(screen, (255, 255, 255), (50, 80, 1150, 600), 10, 4)
 
     screen.blit(ABOUT.HEAD, (180, 12))
     for cnt, i in enumerate(ABOUT.TEXT):
