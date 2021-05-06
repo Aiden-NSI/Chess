@@ -59,7 +59,7 @@ class Piece():
 	def move(self,pos):
 		global selected
 		global moves
-		if playerIsWhite: #This actually runs when the black player moves
+		if playerIsWhite: #fonctionne lorsque le joueur noir se déplace
 			moves[1].append((self.name, (self.pos, pos)))
 		else: #vice-versa
 			moves[0].append((self.name, (self.pos, pos)))
@@ -101,16 +101,16 @@ updateText()
 def contains(pos):
 	boardpos = board[pos[0]][pos[1]]
 	if boardpos == 0:
-		return 0 #Returns 0 if specified position does not contain a piece
+		return 0 #Renvoie 0 si la position spécifiée ne contient pas de pièce
 	if playerIsWhite == True:
 		return 1 if boardpos.color == 'W' else 2
 	else:
 		return 1 if boardpos.color == 'B' else 2
 
-#Returns top left pixel value of grid pos
+#Renvoie la valeur de pixel en haut à gauche de la position de la grille
 def pixelpos(pos): return (pos[0] * tilew, pos[1] * tileh)
 
-#Draws board pieces depending on value
+#Dessine le plateau en fonction de la valeur
 def drawPieces():
 	global selected
 	for i in range(len(board)):
