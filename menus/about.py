@@ -50,7 +50,7 @@ def showScreen(screen):
     for cnt, i in enumerate(ABOUT.TEXT):
         screen.blit(i, (70, 90 + cnt*18))
 
-    screen.blit(BACK, (750, 0))
+    screen.blit(BACK, (1200, 0))
     pygame.display.update()
 
 # Fonction principale appellée quand on appuie sur le mennu principal
@@ -65,5 +65,5 @@ def main(screen):
 
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 x, y = event.pos
-                if 750 < x < 800 and 0 < y < 50:
+                if 1200 < x < 1250 and 0 < y < 50:
                     return 1
