@@ -21,6 +21,8 @@ wmoves, bmoves = [], []
 moves = [wmoves, bmoves]
 playerIsWhite = True
 
+black = (51, 51, 102)
+White = (255, 225, 225)
 
 class Piece():
 	def __init__(self,name,color,startpos):
@@ -121,15 +123,13 @@ def getAttacks():
 
 clock = pygame.time.Clock()
 
-darktan = (51, 51, 102)
-lighttan = (255, 225, 225)
 while True:
 	clock.tick(30)
-	pygame.draw.rect(screen, darktan, [0, 0, width, height])
+	pygame.draw.rect(screen, black, [0, 0, width, height])
 	for row in range(4):
 		for col in range(4):
-			pygame.draw.rect(screen, lighttan, [row*90, col*90, tilew, tileh])
-			pygame.draw.rect(screen, lighttan, [row*90+tilew, col*90+tileh, tilew, tileh])
+			pygame.draw.rect(screen, White, [row*90, col*90, tilew, tileh])
+			pygame.draw.rect(screen, White, [row*90+tilew, col*90+tileh, tilew, tileh])
 
 	drawPieces()
 
